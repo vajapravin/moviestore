@@ -1,0 +1,41 @@
+# == Schema Information
+#
+# Table name: banners
+#
+#  id             :integer          not null, primary key
+#  name           :string
+#  folderid       :string
+#  upload_at      :string
+#  size           :integer
+#  download_count :integer
+#  cstatus        :string
+#  link           :string
+#  linkextid      :string
+#  movie_id       :integer
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  folderid: MyString
+  upload_at: MyString
+  size: 1
+  download_count: 1
+  cstatus: MyString
+  link: MyString
+  linkextid: MyString
+  movie: one
+
+two:
+  name: MyString
+  folderid: MyString
+  upload_at: MyString
+  size: 1
+  download_count: 1
+  cstatus: MyString
+  link: MyString
+  linkextid: MyString
+  movie: two

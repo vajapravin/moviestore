@@ -1,0 +1,20 @@
+# == Schema Information
+#
+# Table name: movie_categories
+#
+#  id          :integer          not null, primary key
+#  category_id :integer
+#  movie_id    :integer
+#  created_at  :datetime         not null
+#  updated_at  :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  category: one
+  movie: one
+
+two:
+  category: two
+  movie: two
