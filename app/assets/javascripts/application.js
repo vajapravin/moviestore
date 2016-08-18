@@ -12,4 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require responsiveslides.min.js
+//= require jquery.flexisel.js
