@@ -1,3 +1,5 @@
+require 'csv'
+
 class Admin::MoviesController < Admin::BaseController
   before_action :set_movie, only: [:show, :edit, :update, :destroy]
 
@@ -37,6 +39,14 @@ class Admin::MoviesController < Admin::BaseController
     respond_to do |format|
       format.html { redirect_to movies_url, notice: 'Movie was successfully destroyed.' }
       format.json { head :no_content }
+    end
+  end
+
+  def export_movies
+    @movies = Movie.order(:name)
+    respond_to do |format|
+      format.csv { send_data @movies.to_csv }
+      # format.xls { send_data @movies.to_csv(col_sep: "\t") }
     end
   end
 
