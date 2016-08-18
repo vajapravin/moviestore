@@ -3,8 +3,7 @@ namespace :dev do
   task sync_openload: :environment do
     ol = OpenLoad.new
     [{"id": "1947989","name": "2016"},{"id": "1949823","name": "2013"},{"id": "1951490","name": "2011"},{"id": "1951492","name": "2006"},{"id": "1951498","name": "1996"},{"id": "1951500","name": "2015"},{"id": "1951768","name": "2014"},{"id": "1964632","name": "2012"}].each do |folder|
-        results = ol.folder_list(folder['id']) # 2016
-
+        results = ol.folder_list(folder[:id]) # 2016
         results['result']['folders'].each do |f|
             movie_detail = ol.folder_list(f['id']) # 2016
             subtitle = nil
@@ -25,7 +24,7 @@ namespace :dev do
                     movie.cstatus = file['cstatus']
                     movie.link = file['link']
                     movie.linkextid = file['linkextid']
-                    movie.released_year = folder['name']
+                    movie.released_year = folder[:name]
                 end
             end
             if movie
