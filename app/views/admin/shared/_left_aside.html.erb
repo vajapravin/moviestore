@@ -1,13 +1,24 @@
     <div class="mdl-layout__drawer">
-        <header>darkboard</header>
+        <header><a href="/">MovieStore</a></header>
         <nav class="mdl-navigation">
-            <a class="mdl-navigation__link mdl-navigation__link--current" href="index.html">
+            <a class="mdl-navigation__link<%=' mdl-navigation__link--current' if params['controller'] == 'admin/dashboard' && params['action'] == 'index' %>" href="/admin">
                 <i class="material-icons" role="presentation">dashboard</i>
                 Dashboard
             </a>
-            <a class="mdl-navigation__link" href="forms.html">
+
+            <a class="mdl-navigation__link<%=' mdl-navigation__link--current' if params['controller'] == 'admin/movies' && params['action'] == 'index' %>" href="/admin/movies">
                 <i class="material-icons" role="presentation">person</i>
-                Account
+                Movies
+            </a>
+
+            <a class="mdl-navigation__link" href="#">
+                <i class="material-icons" role="presentation">person</i>
+                Users
+            </a>
+
+            <a class="mdl-navigation__link" href="#">
+                <i class="material-icons" role="presentation">person</i>
+                Home Page
             </a>
 
             <div class="mdl-layout-spacer"></div>

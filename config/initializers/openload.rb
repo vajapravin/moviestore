@@ -2,12 +2,12 @@ require 'httparty'
 require 'ostruct'
 
 class OpenLoad
-  @api_url = "https://api.openload.co/1"
+  @@api_url = "https://api.openload.co/1"
 
   # Create a new instace using the api-login and the api-key (both are optional)
-  def initialize(login = nil, key = nil)
-    @api_login = login
-    @api_key   = key
+  def initialize
+    @api_login = ENV['OPENLOAD_LOGIN']
+    @api_key   = ENV['OPENLOAD_KEY']
   end
 
   def account_info
@@ -79,7 +79,7 @@ class OpenLoad
 
   private
   def get_a_request(path)
-    HTTParty.get("#{@api_url}#{path}").body
+    HTTParty.get("#{@@api_url}#{path}").body    
   end
 
   def http_parameter(name, value, first_parameter = false)

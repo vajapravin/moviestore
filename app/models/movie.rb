@@ -20,4 +20,9 @@
 
 class Movie < ApplicationRecord
 	acts_as_taggable_on :categories
+	has_one :subtitle
+
+	def movie_size
+		Filesize.from("#{size} B").pretty rescue size
+	end
 end

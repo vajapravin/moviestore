@@ -22,7 +22,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Material Dashboard Lite</title>
+    <title>Watch Free Movies</title>
 
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
@@ -31,7 +31,7 @@
     <!-- Add to homescreen for Safari on iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <meta name="apple-mobile-web-app-title" content="Watch Free Movies">
 
 
     <!-- Tile icon for Win8 (144x144 + tile color) -->
@@ -57,12 +57,14 @@
     <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header is-small-screen">
-    <%= render "/admin/shared/top_nav_header" %>
-    <%= render "/admin/shared/left_aside" %>
-    <main class="mdl-layout__content">
-      <%= yield %>
-    </main>
+  <div class="mdl-layout__container">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header is-small-screen">
+      <%= render "/admin/shared/top_nav_header" %>
+      <%= render "/admin/shared/left_aside" %>
+      <main class="mdl-layout__content">
+        <%= yield %>
+      </main>
+    </div>
   </div>
   <%= javascript_include_tag 'admin', 'data-turbolinks-track': 'reload' %>
 </body>
