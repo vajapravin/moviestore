@@ -2,6 +2,7 @@ require 'csv'
 
 class Admin::MoviesController < Admin::BaseController
   before_action :set_movie, only: [:show, :edit, :update, :destroy]
+  layout :set_layout
 
   # GET /admin/movies
   # GET /admin/movies.json
@@ -59,5 +60,13 @@ class Admin::MoviesController < Admin::BaseController
     # Never trust parameters from the scary internet, only allow the white list through.
     def movie_params
       params.fetch(:movie, {})
+    end
+
+    def set_layout
+      if params[:action] == "edit"
+        false
+      else
+        "admin"
+      end
     end
 end

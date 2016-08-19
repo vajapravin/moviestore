@@ -30,9 +30,18 @@ namespace :dev do
             if movie
                 movie.subtitle = subtitle
                 movie.save
+                if movie_detail['result']['folders'].size > 0 && movie_detail['result']['folders'][0]['name'] == 'banners'
+                end
                 ap "Move #{movie.name} Synced!"
             end
         end
+    end
+  end
+
+  def fetch_banners movie, folderid, ol
+    results = ol.folder_list(folderid)
+    results['result']['files'].each do |f|
+      result = ol.download_ticket(f['linkextid'])
     end
   end
 end

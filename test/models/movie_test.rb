@@ -7,13 +7,17 @@
 #  folderid       :string
 #  upload_at      :string
 #  size           :integer
+#  sha1           :string
 #  download_count :integer
 #  cstatus        :string
+#  status         :string
+#  content_type   :string
 #  link           :string
 #  linkextid      :string
 #  youtube        :string
 #  facebook       :string
 #  twitter        :string
+#  released_year  :string
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
 #

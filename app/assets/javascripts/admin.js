@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require turbolinks
 //= require admin/js/d3.js
 //= require admin/js/getmdl-select.min.js
 //= require admin/js/material.js
@@ -21,3 +22,5 @@
 //= require admin/js/widgets/pie-chart/pie-chart-nvd3.js
 //= require admin/js/widgets/table/table.js
 //= require admin/js/widgets/todo/todo.js
+//= require jquery.fancybox.js
+//= require admin/js/custom.js

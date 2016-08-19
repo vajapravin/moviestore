@@ -27,7 +27,7 @@
                             <td class="mdl-data-table__cell--non-numeric"><%= movie.released_year %></td>
                             <td class="mdl-data-table__cell--non-numeric"><%= movie.movie_size %></td>
                             <td class="mdl-data-table__cell--non-numeric"><%= movie.download_count %></td>
-                            <td class="mdl-data-table__cell--non-numeric"></td>
+                            <td class="mdl-data-table__cell--non-numeric"><%= link_to "Sync", "javascript:sync_movie(#{movie.id})", class: "label label--mini background-color--primary" %></td>
                         </tr>
                     <% end %>
                     </tbody>
