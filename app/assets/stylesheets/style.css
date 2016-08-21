@@ -1287,7 +1287,7 @@ text-transform: uppercase;
 	display: block;
 	
 }
-.login-right input[type="text"] {
+.login-right input[type="text"], .login-right form input[type="email"], .login-right form input[type="password"] {
 	border: 1px solid #E4E4E4;
 	outline-color:#d8232a;
 	width: 96%;

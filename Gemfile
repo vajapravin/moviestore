@@ -71,3 +71,4 @@ gem 'filesize'
 gem 'google-analytics-rails', '1.1.0'
 gem 'paperclip'
 gem 'paperclip-watermark'
+gem "rolify"
