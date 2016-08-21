@@ -2,7 +2,7 @@
 
 {
   (function () {
-    var checkbox = document.querySelector('.employer-form .form__action .mdl-checkbox__input'),
+    var checkbox = document.querySelector('.employer-form .form__action .mdl-checkbox__input#isInfoReliable'),
         button = document.querySelector('.employer-form .form__action .mdl-button');
     button.disabled = !checkbox.checked;
 

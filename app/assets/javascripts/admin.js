@@ -17,10 +17,10 @@
 //= require admin/js/getmdl-select.min.js
 //= require admin/js/material.js
 //= require admin/js/nv.d3.js
-//= require admin/js/widgets/employer-form/employer-form.js
-//= require admin/js/widgets/line-chart/line-chart-nvd3.js
-//= require admin/js/widgets/pie-chart/pie-chart-nvd3.js
-//= require admin/js/widgets/table/table.js
-//= require admin/js/widgets/todo/todo.js
+// require admin/js/widgets/employer-form/employer-form.js
+// require admin/js/widgets/line-chart/line-chart-nvd3.js
+// require admin/js/widgets/pie-chart/pie-chart-nvd3.js
+// require admin/js/widgets/table/table.js
+// require admin/js/widgets/todo/todo.js
 //= require jquery.fancybox.js
-//= require admin/js/custom.js
+// require admin/js/custom.js

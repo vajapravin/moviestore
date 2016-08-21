@@ -1,0 +1,27 @@
+<div class="mdl-card mdl-shadow--2dp employer-form" action="#">
+  <div class="mdl-card__title">
+    <h2><%= @movie.name %></h2>
+    <div class="mdl-card__subtitle">Please complete the form</div>
+  </div>
+
+  <div class="mdl-card__supporting-text">
+  	<%= simple_form_for([:admin, @movie], html: {class: 'form'}) do |f| %>
+      <div class="form__article">
+        <h3>Banners</h3>
+
+        <div class="mdl-grid">
+        	<div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <%= f.input :name, disabled: true %>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="form__action">
+        <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--colored">
+          Submit
+        </button>
+      </div>
+    <% end %>
+  </div>
+</div>

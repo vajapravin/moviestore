@@ -8,6 +8,7 @@ h4, h5, h6,
 h1, h2, h3 {margin-top: 0;}
 ul, ol {margin: 0;}
 p {margin: 0;}
+
 html, body{
 	font-family: 'Roboto Condensed', sans-serif;
 	background: url(/assets/banner1.jpg) no-repeat center center fixed;
@@ -631,12 +632,11 @@ margin-right:4%;
 }
 p.m_3{
 	position: absolute;
-top: -30px;
-color: #fff;
-font-size: 1.1em;
-width: 100%;
-
-text-align: center;
+	top: -50px;
+	color: #fff;
+	font-size: 1.1em;
+	width: 100%;
+	text-align: center;
 }
 .grid_2:hover, .row_2:hover, .m_5:hover, .m_6:hover, .m_7:hover, .m_8:hover{
 	
@@ -986,17 +986,18 @@ color: #000;
 margin-bottom:1em;
 }
 .down_btn {
-margin-top: 3em;
+	margin-top: 0.5em;
 }
 .btn1 {
 padding:12px 20px;
 outline: none;
-
 font-size: 1.2em;
 color:#fff;
 text-decoration: none;
 text-transform: uppercase;
-background: #d8232a;
+display: block;
+width: 250px;
+text-align: center;
 }
 .btn1 span {
 width: 20px;
@@ -1012,6 +1013,12 @@ a.btn1:hover{
 	color:#fff;
 	text-decoration:none;
 }
+
+.btn-red{ background: #d8232a; }
+.btn-blue{ background: #03A9F4; }
+.btn-cyan{ background: #00BCD4; }
+.btn-orange{ background: #FF9800; }
+
 /*--single--*/
 .images_3_of_2 {
 width: 37.2%;

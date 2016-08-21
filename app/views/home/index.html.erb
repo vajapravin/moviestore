@@ -1,24 +1,14 @@
 <div class="slider">
    <div class="callbacks_container">
       <ul class="rslides" id="slider">
-         <li>
-            <img src="/assets/banner.jpg" class="img-responsive" alt=""/>
+      	<% HomeSlider.all.each do |slide| %>
+         	<li>
+            <img src="<%= slide.movie.banners.first.image.url(:original) %>" class="img-responsive" style="height: 475px;" alt=""/>
             <div class="button">
-               <a href="#" class="hvr-shutter-out-horizontal">Watch Now</a>
+               <a href="/movies/<%=slide.movie.id%>/<%=slide.movie.file_name.try(:parameterize)%>" class="hvr-shutter-out-horizontal">Watch Now</a>
             </div>
-         </li>
-         <li>
-            <img src="/assets/banner1.jpg" class="img-responsive" alt=""/>
-            <div class="button">
-               <a href="#" class="hvr-shutter-out-horizontal">Watch Now</a>
-            </div>
-         </li>
-         <li>
-            <img src="/assets/banner2.jpg" class="img-responsive" alt=""/>
-            <div class="button">
-               <a href="#" class="hvr-shutter-out-horizontal">Watch Now</a>
-            </div>
-         </li>
+         	</li>
+       	<% end %>
       </ul>
    </div>
    <div class="banner_desc">
@@ -63,49 +53,58 @@
 	<div class="box_2">
 		<div class="col-md-5 grid_3">
 		  <div class="row_1">
-		  <div class="col-md-6 grid_4"><a href="single.html">
-			  <div class="grid_2">
-				<img src="/assets/pic1.jpg" class="img-responsive" alt=""/>
-				<div class="caption1">
-					<ul class="list_3">
-			    		<li><i class="icon5"> </i><p>3,548</p></li>
-			    	</ul>
-			    	<i class="icon4"> </i>
-			    	<p class="m_3">Guardians of the Galaxy</p>
-				</div>
-			   </div>
-			   <div class="grid_2 col_1">
-				<img src="/assets/pic2.jpg" class="img-responsive" alt=""/>
-				<div class="caption1">
-					<ul class="list_3">
-			    		<li><i class="icon5"> </i><p>3,548</p></li>
-			    	</ul>
-			    	<i class="icon4"> </i>
-			    	<p class="m_3">Guardians of the Galaxy</p>
-				</div>
-			   </div>
-		   </a></div>
-		   <div class="col-md-6 grid_7">
-			   <div class="col_2">
-			   	    <ul class="list_4">
-		    			<li><i class="icon1"> </i><p>2,548</p></li>
+			  <div class="col-md-6 grid_4">
+			  	<a href="/movies/<%=FeaturedMovie.row1.id%>/<%=FeaturedMovie.row1.name.parameterize%>">
+					  <div class="grid_2">
+							<img src="<%=FeaturedMovie.row1.cover_photo%>" class="img-responsive" alt=""/>
+							<div class="caption1">
+					    	<p class="m_3"><%=FeaturedMovie.row1.name%></p>
+							</div>
+					  </div>
+					</a>
+			  	<a href="<%=FeaturedMovie.row2.detail_url%>">
+				   	<div class="grid_2 col_1">
+							<img src="<%=FeaturedMovie.row2.cover_photo%>" class="img-responsive" alt=""/>
+							<div class="caption1">
+					    	<p class="m_3"><%=FeaturedMovie.row2.name%></p>
+							</div>
+					  </div>
+					</a>
+			   	<div class="grid_2 col_1 col_2">
+						<ul class="list_4">
+		    			<li><i class="icon1"> </i><p><%= FeaturedMovie.row4.vote_count.to_human %></p></li>
 		    			<li><i class="icon2"> </i><p>215</p></li>
 		    			<li><i class="icon3"> </i><p>546</p></li>
 		    			<li>Rating : &nbsp;&nbsp;<p><img src="/assets/rating1.png" alt=""/></p></li>
-		    			<li>Release Date : &nbsp;<span class="m_4">Mar 15, 2015</span> </li>
+		    			<li>Release Date : &nbsp;<span class="m_4"><%= FeaturedMovie.row4.released_date.strftime("%B %d, %Y") rescue '' %></span> </li>
 		    			<div class="clearfix"> </div>
 		    		</ul>
-		    		<div class="m_5"><a href="single.html"><img src="/assets/pic3.jpg" class="img-responsive" alt=""/></a></div>
-			   </div>
-		 </div>
-		   <div class="clearfix"> </div>
-		   </div>
-		   <div class="row_2">
-		   	<a href="single.html"><img src="/assets/pic4.jpg" class="img-responsive" alt=""/></a>
-		   </div>
+		    		<div class="m_5">
+		    			<a href="<%=FeaturedMovie.row4.detail_url%>"><img src="<%=FeaturedMovie.row4.cover_photo%>" class="img-responsive" alt=""/></a>
+			    	</div>
+				  </div>
+			  </div>
+			  <div class="col-md-6 grid_7">
+				  <div class="col_2">
+		   	    <ul class="list_4">
+		    			<li><i class="icon1"> </i><p><%= FeaturedMovie.row3.vote_count.to_human %></p></li>
+		    			<li><i class="icon2"> </i><p>215</p></li>
+		    			<li><i class="icon3"> </i><p>546</p></li>
+		    			<li>Rating : &nbsp;&nbsp;<p><img src="/assets/rating1.png" alt=""/></p></li>
+		    			<li>Release Date : &nbsp;<span class="m_4"><%= FeaturedMovie.row3.released_date.strftime("%B %d, %Y") rescue '' %></span> </li>
+		    			<div class="clearfix"> </div>
+		    		</ul>
+		    		<div class="m_5">
+		    			<a href="<%=FeaturedMovie.row3.detail_url%>"><img src="<%=FeaturedMovie.row3.cover_photo%>" class="img-responsive" alt=""/></a>
+			    	</div>
+			   	</div>
+			 	</div>
+	 	  	<div class="clearfix"> </div>
+	   	</div>
 		</div>
-		<div class="col-md-5 content_right">
-		 <div class="row_3">
+			
+			<div class="col-md-5 content_right">
+		 	<div class="row_3">
 		  <div class="col-md-6 content_right-box"><a href="single.html">
 			<div class="grid_2">
 			<img src="/assets/pic6.jpg" class="img-responsive" alt=""/>
@@ -133,7 +132,7 @@
 		   <div class="clearfix"> </div>
 		   </div>
 		   <div class="video">
-		      <iframe width="100%" height="" src="https://www.youtube.com/embed/s1QeoSedWmM" frameborder="0" allowfullscreen></iframe>
+		      <iframe width="100%" height="" src="https://www.youtube.com/embed/CmRih_VtVAs" frameborder="0"></iframe>
 		  </div>
 		  <div class="row_5">
 		  	<div class="col-md-6">

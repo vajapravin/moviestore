@@ -1,14 +1,12 @@
-<%= content_tag :div, class: "row" do %>
-	<%= content_tag :div, class: "col s12" do %>
-		<%= content_tag :div, class: "modal-content", style: "display: initial;" do %>
-		  <%= content_tag :div, class: "modal-header" do %>
-		    <h4 class="modal-title text-center" id="exampleModalLabel">Editing Movie</h4>
-		  <% end %>
-		  <%= content_tag :div, class: "modal-body" do %>
-				<%= render 'form', movie: @movie %>
-			<% end %>
-		<% end %>
-	<% end %>
-<% end %>
-<%#= link_to 'Show', @movie %> |
-<%#= link_to 'Back', movies_path %>
+<div class="mdl-card mdl-shadow--2dp employer-form" action="#">
+  <div class="mdl-card__title" style="height: 266px; background: url('<%= @movie.cover_photo('670x266') %>') center / cover">
+  </div>
+  <div class="mdl-card__title" style="height: 100px;">
+    <h2><%= @movie.name %></h2>
+    <div class="mdl-card__subtitle"><%= @movie.tagline %></div>
+  </div>
+
+  <div class="mdl-card__supporting-text">
+  	<%= render "form", movie: @movie %>
+  </div>
+</div>

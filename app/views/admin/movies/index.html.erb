@@ -8,26 +8,21 @@
                     <thead>
                     <tr>
                         <th class="mdl-data-table__cell--non-numeric">Name</th>
-                        <th class="mdl-data-table__cell--non-numeric">Genres</th>
                         <th class="mdl-data-table__cell--non-numeric">Released Year</th>
                         <th class="mdl-data-table__cell--non-numeric">Size</th>
-                        <th class="mdl-data-table__cell--non-numeric">Download Count</th>
                         <th class="mdl-data-table__cell--non-numeric">Actions</th>
                     </tr>
                     </thead>
                     <tbody>
                     <% @movies.each do |movie| %>
                         <tr>
-                            <td class="mdl-data-table__cell--non-numeric"><%= movie.name %></td>
                             <td class="mdl-data-table__cell--non-numeric">
-                                <% movie.categories.each do |c| %>
-                                    <span class="label label--mini background-color--mint"><%= c %></span>
-                                <% end %>
+                                <%= image_tag movie.cover_photo('670x266'), size: "60x60" %>
+                                <%= movie.name %>
                             </td>
                             <td class="mdl-data-table__cell--non-numeric"><%= movie.released_year %></td>
                             <td class="mdl-data-table__cell--non-numeric"><%= movie.movie_size %></td>
-                            <td class="mdl-data-table__cell--non-numeric"><%= movie.download_count %></td>
-                            <td class="mdl-data-table__cell--non-numeric"><%= link_to "Sync", "javascript:sync_movie(#{movie.id})", class: "label label--mini background-color--primary" %></td>
+                            <td class="mdl-data-table__cell--non-numeric"><%= link_to "Sync", "/admin/movies/#{movie.id}/edit", class: "mdl-button mdl-js-button mdl-js-ripple-effect" %></td>
                         </tr>
                     <% end %>
                     </tbody>

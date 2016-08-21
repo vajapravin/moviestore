@@ -1,6 +1,6 @@
 levels = ["state", "county", "city", "department"];
 
-$(document).ready(function(){
+$(document).on("ready page:load", function(){
     // modal options
     modal_defaults = {
         type: "ajax",
@@ -13,12 +13,16 @@ $(document).ready(function(){
         autoCenter:true
     }
 
-    sync_movie = function(movie_id) {
-        $.fancybox.close();
-        modal_defaults["href"] = "/admin/movies/"+movie_id+"/edit";
-        $.fancybox.open(modal_defaults);
+    leanModal_defaults = {
+      dismissible: true, // Modal can be dismissed by clicking outside of the modal
+      opacity: .1, // Opacity of modal background
+      in_duration: 300, // Transition in duration
+      out_duration: 200, // Transition out duration
+      starting_top: '4%', // Starting top style attribute
+      ending_top: '30%', // Ending top style attribute
     }
-    
+
+    $('.modal-trigger').leanModal(leanModal_defaults);    
     // participant_logs = function(participant_id) {
     //     $.fancybox.close();
     //     modal_defaults["href"] = "/api/v1/participants/"+participant_id+"/logs";
