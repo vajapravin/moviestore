@@ -11219,7 +11219,7 @@ a {
     border-color: rgb(0, 188, 212); }
     .employer-form .form__action .mdl-checkbox.is-checked .mdl-checkbox__box-outline .mdl-checkbox__tick-outline {
       background-color: rgb(0, 188, 212);
-      background-image: url("../images/tick_dark.svg?embed"); }
+      background-image: url("/assets/admin/images/tick_dark.svg?embed"); }
 
 .employer-form__general_skills {
   margin-top: 24px; }

@@ -72,3 +72,5 @@ gem 'google-analytics-rails', '1.1.0'
 gem 'paperclip'
 gem 'paperclip-watermark'
 gem "rolify"
+gem "bitly"
+gem "adfly", "~> 0.0.1"

@@ -5,7 +5,7 @@
          	<li>
             <img src="<%= slide.movie.banners.first.image.url(:original) %>" class="img-responsive" style="height: 475px;" alt=""/>
             <div class="button">
-               <a href="/movies/<%=slide.movie.id%>/<%=slide.movie.file_name.try(:parameterize)%>" class="hvr-shutter-out-horizontal">Watch Now</a>
+               <a href="<%=slide.movie.facebook_commenter_url%>" class="hvr-shutter-out-horizontal">Watch Now</a>
             </div>
          	</li>
        	<% end %>
@@ -54,7 +54,7 @@
 		<div class="col-md-5 grid_3">
 		  <div class="row_1">
 			  <div class="col-md-6 grid_4">
-			  	<a href="/movies/<%=FeaturedMovie.row1.id%>/<%=FeaturedMovie.row1.name.parameterize%>">
+			  	<a href="<%=FeaturedMovie.row1.facebook_commenter_url%>">
 					  <div class="grid_2">
 							<img src="<%=FeaturedMovie.row1.cover_photo%>" class="img-responsive" alt=""/>
 							<div class="caption1">
@@ -62,7 +62,7 @@
 							</div>
 					  </div>
 					</a>
-			  	<a href="<%=FeaturedMovie.row2.detail_url%>">
+			  	<a href="<%=FeaturedMovie.row2.facebook_commenter_url%>">
 				   	<div class="grid_2 col_1">
 							<img src="<%=FeaturedMovie.row2.cover_photo%>" class="img-responsive" alt=""/>
 							<div class="caption1">
@@ -80,7 +80,7 @@
 		    			<div class="clearfix"> </div>
 		    		</ul>
 		    		<div class="m_5">
-		    			<a href="<%=FeaturedMovie.row4.detail_url%>"><img src="<%=FeaturedMovie.row4.cover_photo%>" class="img-responsive" alt=""/></a>
+		    			<a href="<%=FeaturedMovie.row4.facebook_commenter_url%>"><img src="<%=FeaturedMovie.row4.cover_photo%>" class="img-responsive" alt=""/></a>
 			    	</div>
 				  </div>
 			  </div>
@@ -95,7 +95,7 @@
 		    			<div class="clearfix"> </div>
 		    		</ul>
 		    		<div class="m_5">
-		    			<a href="<%=FeaturedMovie.row3.detail_url%>"><img src="<%=FeaturedMovie.row3.cover_photo%>" class="img-responsive" alt=""/></a>
+		    			<a href="<%=FeaturedMovie.row3.facebook_commenter_url%>"><img src="<%=FeaturedMovie.row3.cover_photo%>" class="img-responsive" alt=""/></a>
 			    	</div>
 			   	</div>
 			 	</div>

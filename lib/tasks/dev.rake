@@ -10,6 +10,14 @@ namespace :dev do
     HomeSlider.create(movie: Movie.find_by(sha1: 'b89ca2ce07fadcf535db0eff55b3af0f22bb461b'))
   end
 
+  desc 'Facebook commenter URL'
+  task facebook_commenter_url: :environment do
+    Movie.where.not(name: nil).where(facebook_commenter_url: nil).where(facebook_commenter_embed: nil).where.not(imdbid: nil).each do |m|
+      m.update_attributes(facebook_commenter_url: "/movie/#{m.imdbid}/#{m.name.parameterize}")
+      ap "/movie/#{m.imdbid}/#{m.name.parameterize}"
+    end
+  end
+
   desc 'Home page featured movies'
   task featured: :environment do
     FeaturedMovie.destroy_all
