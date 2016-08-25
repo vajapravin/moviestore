@@ -12,7 +12,7 @@ namespace :dev do
 
   desc 'Facebook commenter URL'
   task facebook_commenter_url: :environment do
-    Movie.where.not(name: nil).where(facebook_commenter_url: nil).where(facebook_commenter_embed: nil).where.not(imdbid: nil).each do |m|
+    Movie.where.not(name: nil).where(facebook_commenter_url: nil).where.not(imdbid: nil).each do |m|
       m.update_attributes(facebook_commenter_url: "/movie/#{m.imdbid}/#{m.name.parameterize}")
       ap "/movie/#{m.imdbid}/#{m.name.parameterize}"
     end

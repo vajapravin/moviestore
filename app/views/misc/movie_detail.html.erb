@@ -139,6 +139,8 @@
       <% unless @movie.youtube.blank? %>
         <iframe width="783" height="440" src="<%= @movie.youtube %>" frameborder="0"></iframe>
       <% end %>
+
+      <div class="fb-comments" data-href="http://www.watchmoviesfree.info<%=@movie.facebook_commenter_url%>" data-width="783" data-numposts="5"></div>
     </div>
     <div class="col-md-3">
       <div class="movie_img">

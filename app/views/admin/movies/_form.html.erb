@@ -81,6 +81,23 @@
       </div>
     </div>
   </div>
+    
+  <div class="form__article">
+    <h3>Facebook Commenter</h3>
+
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <%= f.input :facebook_commenter_url, disabled: true %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form__article employer-form__general_skills">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <textarea class="mdl-textfield__input" type="text" rows="2" id="FacebookCommenterEmbed" name="movie[facebook_commenter_embed]"><%= @movie.facebook_commenter_embed %></textarea>
+      <label class="mdl-textfield__label" for="FacebookCommenterEmbed">Facebook Commenter Embed</label>
+    </div>
+  </div>
 
   <div class="form__action">
     <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect tagCheckboxes" for="IMDbSynced">
