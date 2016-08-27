@@ -80,7 +80,6 @@ class Admin::MoviesController < Admin::BaseController
       @movie.imdb_synced = true
     end
 
-
     respond_to do |format|
       if @movie.save && @movie.update(movie_params)
         format.html { redirect_to "/admin/movies/#{@movie.id}/edit", notice: 'Movie was successfully updated.' }

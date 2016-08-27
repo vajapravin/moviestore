@@ -52,6 +52,7 @@ class Movie < ApplicationRecord
 
   has_attached_file :poster, styles: { small: "50x50>", medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
   do_not_validate_attachment_file_type :poster
+  accepts_nested_attributes_for :banners
 
 	def movie_size
 		Filesize.from("#{size} B").pretty rescue size

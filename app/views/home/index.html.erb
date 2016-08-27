@@ -3,7 +3,7 @@
 		<ul class="rslides" id="slider">
 			<% HomeSlider.all.each do |slide| %>
 			<li>
-				<img src="<%= slide.movie.banners.first.image.url(:original) %>" class="img-responsive" style="height: 475px;" alt=""/>
+				<img src="<%= slide.movie.banners.order('updated_at desc').first.image.url(:original) %>" class="img-responsive" style="height: 475px;" alt=""/>
 				<div class="button">
 					<a href="<%=slide.movie.facebook_commenter_url%>" class="hvr-shutter-out-horizontal">Watch Now</a>
 				</div>

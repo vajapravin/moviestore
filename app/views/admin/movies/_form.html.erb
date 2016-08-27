@@ -12,7 +12,9 @@
     <h7>Banners</h7>
     <div class="mdl-grid">
       <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-        <%= f.input :poster, as: :file, label: :banners, multiple: true %>
+        <%= f.simple_fields_for :banners do |banner_form| %>
+          <%= render 'banners_fields', f: banner_form %>
+        <% end %>
       </div>
     </div>
 
