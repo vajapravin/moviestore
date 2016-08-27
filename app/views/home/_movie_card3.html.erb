@@ -1,6 +1,6 @@
 <div class="grid_2 col_1 col_2">
 	<div class="m_5">
-		<a href="<%=movie.facebook_commenter_url%>"><img src="<%=movie.poster.url(:medium)%>" class="img-responsive" alt=""/></a>
+		<a href="<%=movie.facebook_commenter_url%>"><img src="<%=movie.poster.url(:thumb)%>" class="img-responsive" alt=""/></a>
 	</div>
 	<ul class="list_4">
 		<li><i class="icon1"> </i><p><%= movie.vote_count.to_human rescue 0 %></p></li>
