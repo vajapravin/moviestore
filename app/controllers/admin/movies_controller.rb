@@ -18,6 +18,7 @@ class Admin::MoviesController < Admin::BaseController
 
   # GET /admin/movies/1/edit
   def edit
+    @movie.banners.build if @movie.banners.blank?
   end
 
   # GET /admin/movies/1/edit
