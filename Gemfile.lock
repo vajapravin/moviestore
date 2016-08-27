@@ -280,6 +280,7 @@ DEPENDENCIES
   paperclip
   paperclip-watermark
   pg
+  postmark
   postmark-rails
   pry
   puma (~> 3.0)
