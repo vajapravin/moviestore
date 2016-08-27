@@ -54,6 +54,8 @@ class Movie < ApplicationRecord
   do_not_validate_attachment_file_type :poster
   accepts_nested_attributes_for :banners
 
+  scope :with_poster, -> { where.not(poster_file_name: nil) }
+
 	def movie_size
 		Filesize.from("#{size} B").pretty rescue size
 	end
@@ -79,5 +81,9 @@ class Movie < ApplicationRecord
 
 	def detail_url
 		"/movies/#{id}/#{name.parameterize}"
+	end
+
+	def watch_movie
+		link.sub! '/f/', '/embed/' rescue nil
 	end
 end

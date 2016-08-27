@@ -14,3 +14,4 @@
 //= require jquery_ujs
 //= require responsiveslides.min.js
 //= require jquery.flexisel.js
+//= require social-share-button

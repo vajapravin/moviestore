@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   end
 
   get "/movie/:imdbid/:name" => "misc#movie_detail"
+  get "/movie/:imdbid/:name/watch" => "misc#watch_movie"
 end

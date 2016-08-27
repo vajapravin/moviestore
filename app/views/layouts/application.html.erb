@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <% if params[:action] == "movie_detail" && @movie %>
+    <% if !@movie.nil? %>
       <title><%= @movie.meta_title %></title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />

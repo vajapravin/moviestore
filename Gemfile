@@ -74,3 +74,4 @@ gem 'paperclip-watermark'
 gem "rolify"
 gem "adfly", "~> 0.0.1"
 gem "rails-settings-cached"
+gem 'social-share-button'

@@ -1,0 +1,38 @@
+<div class="col-md-3">
+  <% if @relate_movies.length > 1 %>
+    <% @relate_movies.each_with_index do |movie, index| %>
+      <a href="<%=movie.facebook_commenter_url%>" alt="<%=movie.name%>">
+      <% if index == 0 %>
+        <div class="movie_img">
+          <div class="grid_2">
+            <img src="<%= movie.poster.url(:thumb) %>" class="img-responsive" alt="">
+            <div class="caption1">
+              <ul class="list_5 list_7">
+                <li><i class="icon5"> </i>
+                  <p>3,548</p>
+                </li>
+              </ul>
+              <i class="icon4 icon6 icon7"> </i>
+              <p class="m_3"><%= movie.name %></p>
+            </div>
+          </div>
+        </div>
+      <% else %>
+        <div class="grid_2 col_1">
+          <img src="<%= movie.poster.url(:thumb) %>" class="img-responsive" alt="">
+          <div class="caption1">
+            <ul class="list_3 list_7">
+              <li><i class="icon5"> </i>
+                <p>3,548</p>
+              </li>
+            </ul>
+            <i class="icon4 icon7"> </i>
+            <p class="m_3"><%= movie.name %></p>
+          </div>
+        </div>
+      <% end %>
+      </a>
+    <% end %>
+  <% end %>
+</div>
+<div class="clearfix"> </div>
