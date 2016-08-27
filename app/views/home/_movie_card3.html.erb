@@ -1,0 +1,13 @@
+<div class="grid_2 col_1 col_2">
+	<div class="m_5">
+		<a href="<%=movie.facebook_commenter_url%>"><img src="<%=movie.cover_photo%>" class="img-responsive" alt=""/></a>
+	</div>
+	<ul class="list_4">
+		<li><i class="icon1"> </i><p><%= movie.vote_count.to_human rescue 0 %></p></li>
+		<li><i class="icon2"> </i><p>215</p></li>
+		<li><i class="icon3"> </i><p>546</p></li>
+		<li>Rating : &nbsp;&nbsp;<p><img src="/assets/rating1.png" alt=""/></p></li>
+		<li>Release Date : &nbsp;<span class="m_4"><%= movie.released_date.strftime("%B %d, %Y") rescue '' %></span> </li>
+		<div class="clearfix"> </div>
+	</ul>
+</div>
