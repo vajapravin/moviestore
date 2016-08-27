@@ -81,7 +81,7 @@
 						<div class="clearfix"> </div>
 					</div>
 				<% else %>
-
+					<%= render "movie_card12", movie: movie[1] if movie[1].present? %>
 				<% end %>
 				<%= render "movie_card7", movie: movie[2] if movie[2].present? %>		
 				<div class="row_5">
