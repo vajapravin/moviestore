@@ -2,9 +2,17 @@
   <div class="form__article">
     <h3>Overview</h3>
 
+    <h7>Poster</h7>
     <div class="mdl-grid">
       <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
         <%= f.input :poster, as: :file %>
+      </div>
+    </div>
+
+    <h7>Banners</h7>
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <%= f.input :poster, as: :file, label: :banners, multiple: true %>
       </div>
     </div>
 
