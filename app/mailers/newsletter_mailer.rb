@@ -10,7 +10,7 @@ class NewsletterMailer < ActionMailer::Base
 				  movies_list_heading: "Watch Free Online Movie, Download HD Movie, Fast Movie Stream Online",
 				  movies: movies.map{|m| {
 				   		movie_link: "http://watchmoviesfree.mobi#{m.facebook_commenter_url}",
-				      movie_src: "http://watchmoviesfree.mobi#{m.facebook_commenter_url}",
+				      movie_src: "http://watchmoviesfree.mobi#{m.poster.url(:thumb)}",
 				      movie_title: m.name,
 				      movie_description: m.plot_summary } } }
 				})
