@@ -17,6 +17,7 @@
 /tmp
 /db/schema.rb
 /public/system/*
+/public/deploy/*
 
 .project
 .DS_Store

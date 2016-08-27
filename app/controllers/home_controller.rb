@@ -1,4 +1,6 @@
 class HomeController < ApplicationController
+  caches_page :index if Rails.env.production?
+	
 	def index
 		@featured_movies_1 = Movie.where.not(poster_file_name: nil).limit(10)
 		@featured_movies_2 = Movie.where.not(poster_file_name: nil).where.not(id: @featured_movies_1.pluck(:id)).limit(20)
