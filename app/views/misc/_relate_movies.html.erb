@@ -5,7 +5,7 @@
       <% if index == 0 %>
         <div class="movie_img">
           <div class="grid_2">
-            <img src="<%= movie.poster.url(:thumb) %>" class="img-responsive" alt="">
+            <img src="<%= movie.poster_url %>" class="img-responsive" alt="">
             <div class="caption1">
               <ul class="list_5 list_7">
                 <li><i class="icon5"> </i>
@@ -19,7 +19,7 @@
         </div>
       <% else %>
         <div class="grid_2 col_1">
-          <img src="<%= movie.poster.url(:thumb) %>" class="img-responsive" alt="">
+          <img src="<%= movie.poster_url %>" class="img-responsive" alt="">
           <div class="caption1">
             <ul class="list_3 list_7">
               <li><i class="icon5"> </i>

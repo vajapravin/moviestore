@@ -77,6 +77,20 @@ class OpenLoad
     get_a_request_and_return_in_a_struct("/file/getsplash?login=#{@api_login}&key=#{@api_key}&file=#{file}")
   end
 
+  def find_removed_movies(folder = nil, name = nil)
+    response = get_a_request("/file/listfolder?login=#{@api_login}&key=#{@api_key}#{http_parameter('folder', folder)}")
+    response = JSON.parse(response)
+    if response['status'] == 200 && response['result']
+      if response['result']['folders'].blank? && !['banners'].include?(folder['name'])
+        puts "#{folder} - #{name}" if response['result']['files'].blank?
+      else
+        response['result']['folders'].each do |folder|
+          find_removed_movies(folder['id'], folder['name']) if !['.subtitles', '.videothumb', 'banners'].include?(folder['name'])
+        end
+      end
+    end
+  end
+
   private
   def get_a_request(path)
     HTTParty.get("#{@@api_url}#{path}").body    

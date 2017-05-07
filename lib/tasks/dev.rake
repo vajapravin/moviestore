@@ -94,4 +94,78 @@ namespace :dev do
       end
     end
   end
+
+
+  desc 'Sync IMDB'
+  task sync_imdb: :environment do
+    Movie.where.not(imdbid: nil).each do |movie|
+      imdb_movie = Imdb::Serie.new(movie.imdbid)
+      movie.released_date = imdb_movie.release_date
+      movie.metascore = imdb_movie.metascore
+      movie.tagline = imdb_movie.tagline
+      movie.tag_list = imdb_movie.genres
+      movie.company = imdb_movie.company
+      movie.length = imdb_movie.length
+      movie.vote_count = imdb_movie.votes
+      movie.director_list = (imdb_movie.director - ["(more)"])
+      movie.writer_list = (imdb_movie.writers - ["(more)"])
+      movie.country_list = (imdb_movie.countries - ["(more)"])
+      movie.cast_member_list = imdb_movie.cast_members
+      movie.plot_summary = imdb_movie.plot_summary
+      movie.poster = imdb_movie.poster
+      movie.imdb_synced = true
+      movie.save
+      ap movie.name
+    end
+  end
+
+  desc 'Update IMDB Id'
+  task update_imdb: :environment do
+    Movie.where.not(imdbid: nil).each do |movie|
+      movie.update_attributes(imdbid: movie.imdbid.gsub('tt',''))
+    end
+  end
+
+  desc 'Sync YTS Existing Movies'
+  task yts_existing: :environment do
+    Movie.where.not(imdbid: nil).each do |movie|
+      yts = YTS::Movie.list('json', {limit: 1, query_term: movie.imdbid})
+      if yts['status'] && yts['data']['movie_count'] > 0
+        begin
+          yts['data']['movies'].each do |yts_m|
+            movie.update_attributes(yts_m.only(Movie.column_names.except('id')))
+            movie.update_attribute('yts_url', yts_m['url'])
+            movie.update_attribute('imdbid', yts_m['imdb_code'])
+            movie.update_attribute('name', yts_m['title'])
+            movie.update_attribute('released_year', yts_m['year'])
+          end
+        rescue Exception => e
+          ap "#{movie.id} #{movie.name} #{movie.imdbid} - #{e.message}", color: { string: :red }
+          puts
+        end
+      end
+    end
+  end
+
+  desc 'Sync YTS Existing Movies'
+  task yts_non_existing: :environment do
+    Movie.where(imdbid: nil).where.not(name: nil).each do |movie|
+      yts = YTS::Movie.list('json', {limit: 1, query_term: movie.name.split("20").first.gsub('.', ' ').strip})
+      if yts['status'] && yts['data']['movie_count'] > 0
+        begin
+          yts['data']['movies'].each do |yts_m|
+            movie.update_attributes(yts_m.only(Movie.column_names.except('id')))
+            movie.update_attribute('yts_url', yts_m['url'])
+            movie.update_attribute('imdbid', yts_m['imdb_code'])
+            movie.update_attribute('name', yts_m['title'])
+            movie.update_attribute('released_year', yts_m['year'])
+            ap movie.title_long
+          end
+        rescue Exception => e
+          ap "#{movie.id} #{movie.name} #{movie.imdbid} - #{e.message}", color: { string: :red }
+          puts
+        end
+      end
+    end
+  end  
 end

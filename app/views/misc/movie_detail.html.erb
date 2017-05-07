@@ -126,7 +126,7 @@
           <a class="btn1 btn-blue" href="#"><i class="mdi mdi-movie mdi-18px"></i> Download Movie</a>
         </div> -->
         <div class="down_btn">
-          <a class="btn1 btn-cyan" href="#WatchMovie"><i class="mdi mdi-video mdi-18px"></i> Watch Movie</a>
+          <a class="btn1 btn-cyan" href="<%=@movie.facebook_commenter_url%>/watch/online#WatchMovie"><i class="mdi mdi-video mdi-18px"></i> Watch Movie</a>
         </div>
         <!-- <div class="down_btn">
           <a class="btn1 btn-orange" href="#"><i class="mdi mdi-magnet mdi-18px"></i> Magnet Download</a>
@@ -141,10 +141,6 @@
       <% end %>
 
       <%= social_share_button_tag(@movie.name, :image => "http://www.watchmoviesfree.info#{@movie.cover_photo}", desc: @movie.plot_summary) %>
-
-      <iframe src="<%=@movie.watch_movie%>" scrolling="no" frameborder="0" id="WatchMovie" width="783" height="440" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
-
-      <div class="fb-comments" data-href="http://www.watchmoviesfree.info<%=@movie.facebook_commenter_url%>" data-width="783" data-numposts="5"></div>
     </div>
     <%= render "relate_movies" %>
   </div>
