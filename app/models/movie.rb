@@ -70,6 +70,7 @@ class Movie < ApplicationRecord
   accepts_nested_attributes_for :banners
 
   scope :with_poster, -> { where.not(poster_file_name: nil) }
+  scope :with_large_cover, -> { where.not(large_cover_image: nil) }
 
 	def movie_size
 		Filesize.from("#{size} B").pretty rescue size
