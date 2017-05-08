@@ -23,4 +23,4 @@
 // require admin/js/widgets/table/table.js
 // require admin/js/widgets/todo/todo.js
 //= require jquery.fancybox.js
-// require admin/js/custom.js
+//= require admin/js/custom.js

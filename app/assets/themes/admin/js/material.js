@@ -3677,7 +3677,7 @@ MaterialDataTable.prototype.createCheckbox_ = function (row, opt_rows) {
     } else if (opt_rows) {
         checkbox.addEventListener('change', this.selectRow_(checkbox, null, opt_rows));
     }
-    label.appendChild(checkbox);
+    // label.appendChild(checkbox);
     componentHandler.upgradeElement(label, 'MaterialCheckbox');
     return label;
 };

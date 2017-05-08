@@ -751,4 +751,15 @@ $(document).on("ready page:load", function(){
     //         $("#role_eff_end_date").removeAttr("required");
     //     }
     // }
+
+    $(".movie_datatable").DataTable({
+        "fixedHeader": true,
+        "order": [[ 0, "desc" ]],
+        "processing": true,
+        "serverSide": true,
+        "ajax": "/admin/movies.json",
+        "columnDefs": [
+            {className: 'mdl-data-table__cell--non-numeric', targets: [0, 1, 2, 3]}
+        ]
+    });
 });

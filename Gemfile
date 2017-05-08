@@ -77,3 +77,5 @@ gem "rails-settings-cached"
 gem 'social-share-button'
 gem 'postmark'
 gem 'yts-ruby'
+gem 'whenever'
+gem 'sidekiq'

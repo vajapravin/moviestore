@@ -1,2 +1,3 @@
-json.extract! movie, :id, :created_at, :updated_at
-json.url movie_url(movie, format: :json)
+json.array! [movie] do |movie|
+	json.select! movie, :id, :released_year, :movie_size
+end

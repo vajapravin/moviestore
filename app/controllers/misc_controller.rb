@@ -6,6 +6,24 @@ class MiscController < ApplicationController
 	def movie_watch; end
 	def movie_download; end
 
+	def upcoming
+	end
+
+	def recent
+	end
+
+	def categories
+	end
+
+	def featured
+	end
+
+	def news
+	end
+
+	def more
+	end
+
 	private
 	def set_movie
 		@movie = Movie.find_by(imdbid: params[:imdbid])

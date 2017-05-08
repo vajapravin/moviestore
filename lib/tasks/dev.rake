@@ -129,20 +129,12 @@ namespace :dev do
   desc 'Sync YTS Existing Movies'
   task yts_existing: :environment do
     Movie.where.not(imdbid: nil).each do |movie|
-<<<<<<< HEAD
-      yts = YTS::Movie.list('json', {limit: 1, query_term: movie.imdbid})
-=======
       yts = YTS::Movie.list('json', {limit: 1, query_term: "tt#{movie.imdbid}"})
->>>>>>> master
       if yts['status'] && yts['data']['movie_count'] > 0
         begin
           yts['data']['movies'].each do |yts_m|
             movie.update_attributes(yts_m.only(Movie.column_names.except('id')))
             movie.update_attribute('yts_url', yts_m['url'])
-<<<<<<< HEAD
-            movie.update_attribute('imdbid', yts_m['imdb_code'])
-=======
->>>>>>> master
             movie.update_attribute('name', yts_m['title'])
             movie.update_attribute('released_year', yts_m['year'])
           end
