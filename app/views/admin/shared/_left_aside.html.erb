@@ -1,0 +1,36 @@
+    <div class="mdl-layout__drawer">
+        <header><a href="/">Watch Free Movies</a></header>
+        <nav class="mdl-navigation">
+            <a class="mdl-navigation__link<%=' mdl-navigation__link--current' if params['controller'] == 'admin/dashboard' && params['action'] == 'index' %>" href="/admin">
+                <i class="material-icons" role="presentation">dashboard</i>
+                Dashboard
+            </a>
+
+            <a class="mdl-navigation__link<%=' mdl-navigation__link--current' if params['controller'] == 'admin/movies' && params['action'] == 'index' %>" href="/admin/movies">
+                <i class="material-icons" role="presentation">person</i>
+                Movies
+            </a>
+
+            <a class="mdl-navigation__link<%=' mdl-navigation__link--current' if params['controller'] == 'admin/movies' && params['action'] == 'fetch_openload' %>" href="/admin/movies/fetch-from-openload">
+                <i class="material-icons" role="presentation">person</i>
+                Fetch From Openload
+            </a>
+
+            <a class="mdl-navigation__link" href="#">
+                <i class="material-icons" role="presentation">person</i>
+                Users
+            </a>
+
+            <a class="mdl-navigation__link" href="/admin/home-slider">
+                <i class="material-icons" role="presentation">person</i>
+                Home Slider
+            </a>
+
+            <a class="mdl-navigation__link" href="/admin/misc">
+                <i class="material-icons" role="presentation">person</i>
+                Featured Movies
+            </a>
+
+            <div class="mdl-layout-spacer"></div>
+        </nav>
+    </div>

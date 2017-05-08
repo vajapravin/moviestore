@@ -1,0 +1,22 @@
+<div class="content">
+	<div class="register">
+	  <div class="col-md-6 login-left">
+	    <h3>New Customers</h3>
+	    <p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track your orders in your account and more.</p>
+	    <a class="acount-btn" href="#">Comming Soon</a>
+	  </div>
+	  <div class="col-md-6 login-right">
+	    <h3>Registered Customers</h3>
+	    <p>If you have an account with us, please log in.</p>
+	    <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <span>Email Address<label>*</label></span>
+        <%= f.input :email, required: true, autofocus: true, label: false %>
+        <span>Password<label>*</label></span>
+  			<%= f.input :password, required: true, label: false %>
+	      <!-- <a class="forgot" href="#">Forgot Your Password?</a> -->
+	      <%= f.button :submit, "Log in" %>
+	    <% end %>
+	  </div>
+	  <div class="clearfix"> </div>
+	</div>
+</div>

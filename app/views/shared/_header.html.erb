@@ -1,0 +1,28 @@
+<div class="col-sm-3 logo"><a href="/"><img src="/assets/logo.png" alt=""/></a></div>
+  <div class="col-sm-6 nav">
+    <ul>
+     <li> <span class="simptip-position-bottom simptip-movable" data-tooltip="Upcoming"><a href="/movie/upcoming"> </a></span></li>
+     <li><span class="simptip-position-bottom simptip-movable" data-tooltip="Recent"><a href="/movie/recent"> </a> </span></li>
+     <li><span class="simptip-position-bottom simptip-movable" data-tooltip="Categories"><a href="/movie/categories"> </a></span></li>
+     <li><span class="simptip-position-bottom simptip-movable" data-tooltip="Featured"><a href="/movie/featured"> </a></span></li>
+     <li><span class="simptip-position-bottom simptip-movable" data-tooltip="News"><a href="/movie/news"> </a></span></li>
+     <li><span class="simptip-position-bottom simptip-movable" data-tooltip="more"><a href="/movie/more"> </a></span></li>
+   </ul>
+ </div>
+ <div class="col-sm-3 col-xs-12 header_right">
+  <ul class="header_right_box col-xs-12 col-xs-offset-4">
+    <% if user_signed_in? %>
+    <li><img src="/assets/p1.png" alt=""/></li>
+    <li>
+      <p><a href="/admin">Carol Varois</a></p>
+    </li>
+    <li class="last"><i class="edit"> </i></li>
+    <% else %>
+    <li>
+      <p><a href="/users/sign_in">Login</a></p>
+    </li>
+    <% end %>
+    <div class="clearfix"> </div>
+  </ul>
+</div>
+<div class="clearfix"> </div>

@@ -1,0 +1,27 @@
+<div class="mdl-card mdl-shadow--2dp employer-form" action="#">
+  <div class="mdl-card__title" style="height: 100px;">
+    <h2>Openload</h2>
+  </div>
+
+  <div class="mdl-card__supporting-text">
+		<%= simple_form_for([:admin, @movie], html: {class: 'form'}) do |f| %>
+		
+		  <div class="form__article">
+		    <h3>Movie Info</h3>
+
+		    <div class="mdl-grid">
+		      <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+		        <%= f.input :folderid, val: '' %>
+		      </div>
+		    </div>
+			</div>
+
+		  <div class="form__action">
+		    <button id="submit_button" name='openload' value="1" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+		      Submit
+		    </button>
+		  </div>
+
+		<% end %>		
+  </div>
+</div>

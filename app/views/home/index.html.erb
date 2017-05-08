@@ -1,0 +1,125 @@
+<div class="slider">
+	<div class="callbacks_container">
+		<ul class="rslides" id="slider">
+			<% HomeSlider.all.each do |slide| %>
+			<li>
+				<img src="<%= slide.movie.banners.order('updated_at desc').first.image.url(:original) %>" class="img-responsive" style="height: 475px;" alt=""/>
+				<div class="button">
+					<a href="<%=slide.movie.facebook_commenter_url%>" class="hvr-shutter-out-horizontal">Watch Now</a>
+				</div>
+			</li>
+			<% end %>
+		</ul>
+	</div>
+	<div class="banner_desc">
+		<div class="col-md-9">
+			<ul class="list_1">
+				<li>Published <span class="m_1">Feb 20, 2015</span></li>
+				<li>Updated <span class="m_1">Feb 20 2015</span></li>
+				<li>Rating <span class="m_1"><img src="/assets/rating.png" alt=""/></span></li>
+			</ul>
+		</div>
+		<div class="col-md-3 grid_1">
+			<ul class="list_1 list_2">
+				<li>
+					<i class="icon1"> </i>
+					<p>2,548</p>
+				</li>
+				<li>
+					<i class="icon2"> </i>
+					<p>215</p>
+				</li>
+				<li>
+					<i class="icon3"> </i>
+					<p>546</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="content">
+	<div class="box_1">
+		<h1 class="m_2">Featurd Movies</h1>
+		<div class="search">
+			<form>
+				<input type="text" value="Search..." onfocus="this.value='';" onblur="if (this.value == '') {this.value ='';}">
+				<input type="submit" value="">
+			</form>
+		</div>
+		<div class="clearfix"> </div>
+	</div>
+
+	<div class="box_2">
+		<div class="col-md-5 grid_3">
+			<div class="row_1">
+				<div class="col-md-6 grid_4">
+					<% @featured_movies_1.each_slice(3).each_with_index do |movie, index| %>
+						<%= render "movie_card1", movie: movie[0] if movie[0].present? && index == 0 %>
+						<%= render "movie_card2", movie: movie[1] if movie[1].present? %>
+						<%= render "movie_card3", movie: movie[2] if movie[2].present? %>
+					<% end %>
+				</div>
+				<div class="col-md-6 grid_7">
+					<% @featured_movies_2.each_slice(4).each_with_index do |movie, index| %>
+						<%= render "movie_card4", movie: movie[0] if movie[0].present? && index == 0 %>
+						<%= render "movie_card2", movie: movie[1] if movie[1].present? %>
+						<%= render "movie_card3", movie: movie[2] if movie[2].present? %>
+						<%= render "movie_card9", movie: movie[3] if movie[3].present? %>
+					<% end %>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+
+		<div class="col-md-5 content_right">
+			<% @featured_movies_3.each_slice(4).each_with_index do |movie, index| %>
+				<% if index == 0 %>
+					<div class="row_3">
+						<%= render "movie_card5", movie: movie[0] if movie[0].present? %>
+						<%= render "movie_card6", movie: movie[1] if movie[1].present? %>
+						<div class="clearfix"> </div>
+					</div>
+					<%= render "movie_card7", movie: movie[2] if movie[2].present? %>
+					<div class="row_5">
+						<%= render "movie_card8", movie: movie[3] if movie[3].present? %>
+					</div>
+				<% else %>
+					<%= render "movie_card12", movie: movie[0] if movie[0].present? %>
+					<div class="row_5">
+						<%= render "movie_card8", movie: movie[1] if movie[1].present? %>
+					</div>
+					<%= render "movie_card12", movie: movie[2] if movie[2].present? %>
+					<div class="row_5">
+						<%= render "movie_card8", movie: movie[3] if movie[3].present? %>
+					</div>
+				<% end %>
+			<% end %>
+		</div>
+		<div class="col-md-2 grid_6">
+			<% @featured_movies_4.each_slice(2).each_with_index do |movie, index| %>
+				<% if index == 0 %>
+					<%= render "movie_card10", movie: movie[0] if movie[0].present? %>
+				<% else %>
+					<div class="row_3">
+						<%= render "movie_card11", movie: movie[0] if movie[0].present? %>
+					</div>
+				<% end %>
+				<%= render "movie_card9", movie: movie[1] if movie[1].present? %>
+			<% end %>
+		</div>
+		<div class="clearfix"> </div>
+	</div>
+</div>
+
+<script>
+	$(function () {
+		$("#slider").responsiveSlides({
+			auto: true,
+			nav: true,
+			speed: 500,
+			namespace: "callbacks",
+			pager: true,
+		});
+	});
+</script>

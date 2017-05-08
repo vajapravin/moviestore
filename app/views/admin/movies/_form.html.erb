@@ -1,0 +1,166 @@
+<%= simple_form_for([:admin, movie], html: {class: 'form'}) do |f| %>
+  <div class="form__article">
+    <h3>Overview</h3>
+
+    <h7>Poster</h7>
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <%= f.input :poster, as: :file %>
+      </div>
+    </div>
+
+    <h7>Banners</h7>
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <%= f.simple_fields_for :banners do |banner_form| %>
+          <%= render 'banners_fields', f: banner_form %>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <%= f.input :name %>
+      </div>
+    </div>
+
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <%= f.input :file_name, disabled: true %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form__article">
+    <h3>Meta Tags</h3>
+  </div>
+
+  <div class="form__article employer-form__general_skills">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <textarea class="mdl-textfield__input" type="text" rows="2" id="MetaTitle" name="movie[meta_title]"><%= @movie.meta_title %></textarea>
+      <label class="mdl-textfield__label" for="MetaTitle">Meta Title</label>
+    </div>
+  </div>
+
+  <div class="form__article employer-form__general_skills">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <textarea class="mdl-textfield__input" type="text" rows="2" id="MetaDescription" name="movie[meta_description]"><%= @movie.meta_description %></textarea>
+      <label class="mdl-textfield__label" for="MetaDescription">Meta Description</label>
+    </div>
+  </div>
+
+  <div class="form__article employer-form__general_skills">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <textarea class="mdl-textfield__input" type="text" rows="2" id="MetaKeywords" name="movie[meta_keywords]"><%= @movie.meta_keywords %></textarea>
+      <label class="mdl-textfield__label" for="MetaKeywords">Meta Keywords</label>
+    </div>
+  </div>
+
+  <div class="form__article">
+    <h3>Social</h3>
+
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--3-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <%= f.input :youtube %>
+      </div>
+
+      <div class="mdl-cell mdl-cell--3-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <%= f.input :facebook %>
+      </div>
+
+      <div class="mdl-cell mdl-cell--3-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <%= f.input :twitter %>
+      </div>
+
+      <div class="mdl-cell mdl-cell--3-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <%= f.input :google_fetch_url %>
+      </div>
+    </div>
+
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--4-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <%= f.input :released_year %>
+      </div>
+
+      <div class="mdl-cell mdl-cell--4-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <%= f.input :folderid, label: 'Openload' %>
+      </div>
+
+      <div class="mdl-cell mdl-cell--4-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <%= f.input :imdbid, label: 'Imdb' %>
+      </div>
+    </div>
+  </div>
+    
+  <div class="form__article">
+    <h3>Facebook Commenter</h3>
+
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <%= f.input :facebook_commenter_url, disabled: true %>
+      </div>
+    </div>
+  </div>
+
+  <div class="form__action">
+    <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect tagCheckboxes" for="IMDbSynced">
+      <input type="checkbox" id="IMDbSynced" class="mdl-checkbox__input" name='movie[imdb_synced]' value=false/>
+      <span class="mdl-checkbox__label"> Do you want to sync IMDb information? </span>
+    </label>
+  </div>
+
+  <div class="form__article employer-form__general_skills">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <textarea class="mdl-textfield__input" type="text" rows="1" id="PlotSummary" disabled="true"><%= @movie.plot_summary %></textarea>
+      <label class="mdl-textfield__label" for="PlotSummary">Summary</label>
+    </div>
+  </div>
+
+  <div class="form__article employer-form__general_skills">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <textarea class="mdl-textfield__input" type="text" rows="3" id="Directors" disabled="true"><%= @movie.director_list %></textarea>
+      <label class="mdl-textfield__label" for="Directors">Directors</label>
+    </div>
+  </div>
+
+  <div class="form__article employer-form__general_skills">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <textarea class="mdl-textfield__input" type="text" rows="2" id="Writers" disabled="true"><%= @movie.writer_list %></textarea>
+      <label class="mdl-textfield__label" for="Writers">Writers</label>
+    </div>
+  </div>
+
+  <div class="form__article employer-form__general_skills">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <textarea class="mdl-textfield__input" type="text" rows="1" id="Countries" disabled="true"><%= @movie.country_list %></textarea>
+      <label class="mdl-textfield__label" for="Countries">Countries</label>
+    </div>
+  </div>
+
+  <div class="form__article employer-form__general_skills">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <textarea class="mdl-textfield__input" type="text" rows="1" id="CastMembers" disabled="true"><%= @movie.cast_member_list %></textarea>
+      <label class="mdl-textfield__label" for="CastMembers">Cast Members</label>
+    </div>
+  </div>
+  
+  <!-- 
+  <div class="form__action">
+    <%# ['HDTV', '1080p', 'x264'].each do |tag| %>
+      <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect tagCheckboxes" for="<%#=tag%>">
+        <%# if @movie.tag_list.include?(tag) %>
+          <input type="checkbox" id="<%#=tag%>" class="mdl-checkbox__input" name='movie[tag_list][]' value="<%#=tag%>" checked/>
+        <%# else %>
+          <input type="checkbox" id="<%#=tag%>" class="mdl-checkbox__input" name='movie[tag_list][]' value="<%#=tag%>"/>
+        <%# end %>
+        <span class="mdl-checkbox__label"> <%#= tag %></span>
+      </label>
+    <%# end %>
+  </div> -->
+
+  <div class="form__action">
+    <button id="submit_button" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+      Submit
+    </button>
+  </div>
+<% end %>
