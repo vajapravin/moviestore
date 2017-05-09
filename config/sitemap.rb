@@ -1,5 +1,5 @@
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = "http://www.watchmovies.co.in"
+SitemapGenerator::Sitemap.default_host = "http://www.watchmoviesfree.co.in"
 SitemapGenerator::Sitemap.create_index = true
 SitemapGenerator::Sitemap.sitemaps_path = 'sitemaps/'
 SitemapGenerator::Sitemap.create do
