@@ -11410,3 +11410,42 @@ a {
 
 .mdl-textfield.is-disabled input {
   border-bottom-width: 2px !important; }
+
+.dataTables_info {
+  text-transform: uppercase;
+  position: relative;
+  top: 10px;
+  color: rgb(0, 188, 212);
+  font-size: 14px;}
+.dataTables_paginate {float: right;}
+a.paginate_button.current {
+  background: rgb(0, 188, 212);
+  color: black;
+}
+
+a.paginate_button {
+  margin: 10px;
+  background: black;
+  padding: 10px;
+  cursor: pointer;
+}
+a.paginate_button.disabled {
+  background: #4e4e4e;
+  color: white;
+}
+.dataTables_filter {
+  float: right;
+  margin-bottom: 10px;
+  color: white;
+  text-transform: uppercase;
+}
+.dataTables_filter input {
+  height: 30px;
+  width: 400px;
+}
+.dataTables_length{
+  float: left;
+  font-size: 15px;
+  color: white;
+  text-transform: uppercase;
+}

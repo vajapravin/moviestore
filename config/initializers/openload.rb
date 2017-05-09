@@ -80,15 +80,20 @@ class OpenLoad
   def find_removed_movies(folder = nil, name = nil)
     response = get_a_request("/file/listfolder?login=#{@api_login}&key=#{@api_key}#{http_parameter('folder', folder)}")
     response = JSON.parse(response)
+    removed_movies = []
     if response['status'] == 200 && response['result']
       if response['result']['folders'].blank? && !['banners'].include?(folder['name'])
-        puts "#{folder} - #{name}" if response['result']['files'].blank?
+        if response['result']['files'].blank?
+          ap folder
+          removed_movies << folder
+        end
       else
         response['result']['folders'].each do |folder|
           find_removed_movies(folder['id'], folder['name']) if !['.subtitles', '.videothumb', 'banners'].include?(folder['name'])
         end
       end
     end
+    removed_movies
   end
 
   private

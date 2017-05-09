@@ -4,7 +4,7 @@
         <div class="mdl-grid mdl-cell mdl-cell--9-col-desktop mdl-cell--12-col-tablet mdl-cell--4-col-phone mdl-cell--top">
 
             <div class="mdl-cell mdl-cell--12-col-desktop mdl-cell--12-col-tablet mdl-cell--4-col-phone ">
-                <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp projects-table">
+                <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp projects-table movie_datatable">
                     <thead>
                     <tr>
                         <th class="mdl-data-table__cell--non-numeric">Name</th>
@@ -13,19 +13,7 @@
                         <th class="mdl-data-table__cell--non-numeric">Actions</th>
                     </tr>
                     </thead>
-                    <tbody>
-                    <% @movies.each do |movie| %>
-                        <tr>
-                            <td class="mdl-data-table__cell--non-numeric">
-                                <%= image_tag movie.cover_photo('670x266'), size: "60x60" %>
-                                <%= movie.name %>
-                            </td>
-                            <td class="mdl-data-table__cell--non-numeric"><%= movie.released_year %></td>
-                            <td class="mdl-data-table__cell--non-numeric"><%= movie.movie_size %></td>
-                            <td class="mdl-data-table__cell--non-numeric"><%= link_to "Sync", "/admin/movies/#{movie.id}/edit", class: "mdl-button mdl-js-button mdl-js-ripple-effect" %></td>
-                        </tr>
-                    <% end %>
-                    </tbody>
+
                 </table>
             </div>
         </div>

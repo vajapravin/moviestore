@@ -15,5 +15,12 @@ Rails.application.routes.draw do
 
   get "/movie/:imdbid/:name" => "misc#movie_detail"
   get "/movie/:imdbid/:name/watch/online" => "misc#movie_watch"
-  get "/movie/:imdbid/:name/download" => "misc#movie_download"
+  get "/movie/:imdbid/:name/free/download" => "misc#movie_download"
+
+  get "/movie/upcoming" => "misc#upcoming"
+  get "/movie/recent" => "misc#recent"
+  get "/movie/categories" => "misc#categories"
+  get "/movie/featured" => "misc#featured"
+  get "/movie/news" => "misc#news"
+  get "/movie/more" => "misc#more"
 end
