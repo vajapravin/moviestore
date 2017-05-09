@@ -220,6 +220,8 @@ GEM
     simple_form (3.3.1)
       actionpack (> 4, < 5.1)
       activemodel (> 4, < 5.1)
+    sitemap_generator (5.3.1)
+      builder (~> 3.0)
     slop (3.6.0)
     social-share-button (0.3.4)
       coffee-rails
@@ -305,6 +307,7 @@ DEPENDENCIES
   seed_dump
   sidekiq
   simple_form
+  sitemap_generator
   social-share-button
   spring
   spring-watcher-listen (~> 2.0.0)

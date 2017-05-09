@@ -4,3 +4,8 @@ require File.expand_path('../application', __FILE__)
 every 1.day, at: '00:00 am' do
   runner 'SeedrWorker.perform_async'
 end
+
+# config/schedule.rb
+every 1.day, :at => '5:00 am' do
+  rake "-s sitemap:refresh"
+end
