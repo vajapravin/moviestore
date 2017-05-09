@@ -1698,3 +1698,12 @@ h2.m_3 {
 	width: 48%;
 }
 }
+.abpDialog {
+	background-color: #fff;
+}
+.abpDialog .content {
+	background-color: #fff;
+	font-size: 30px;
+	text-align: center;
+	color: #000;
+}

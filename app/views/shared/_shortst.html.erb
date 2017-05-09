@@ -1,0 +1,58 @@
+<!--DEMO01-->
+<a id="demo01" href="#animatedModal" class="hidden">Hidden</a>
+<div id="animatedModal" class="abpDialog">
+    <img src="<%=asset_path('logo.png')%>"><BR>
+    <div class="content">
+        WE'VE DETECTED THAT YOU ARE USING AD BLOCK PLUS OR SOME OTHER AD BLOCKING SOFTWARE.<BR>
+        IN ORDER TO KEEP OUR SITE FREE, THIS SITE IS SPONSORED IN PARTY BY ADVERTISEMENTS.
+        <BR>
+        <img src="<%=asset_path('disableabp.png')%>">
+        <BR>
+        PLEASE CONSIDER DISABLING AD BLOCKER ON THIS WEBSITE <BR>
+        IF YOU ENJOYED THE CONTENT. THANK YOU!<BR><BR>
+        DISABLE IT AND CLICK <center><a class="btn1 btn-red" href="javascript:reload()">CONTINUE</a></center>
+    </div>
+</div>
+
+<script type="text/javascript">//<![CDATA[ 
+var adblock = true;
+</script>
+<script type="text/javascript" src="/adframe.js"></script>
+<script type="text/javascript">//<![CDATA[ 
+(function() {
+    $("#demo01").animatedModal({color: 'white'});
+    
+    if(adblock){
+        $("#demo01").click();
+        $("#download").remove();
+    } else {
+        $("#download").removeClass('hidden');
+    }
+    reload = function(){
+        location.reload();
+    }
+
+    var configuration = {
+    "token": "574b006c007bf8d3861fbb623da38603",
+    "excludeDomains": [
+        "watchmoviesfree.co.in"
+    ],
+    "capping": {
+        "limit": 5,
+        "timeout": 24
+    },
+    "exitScript": {
+        "enabled": true
+    },
+    "popUnder": {
+        "enabled": true
+    }
+};
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = '//cdn.shorte.st/link-converter.min.js';
+    script.onload = script.onreadystatechange = function () {var rs = this.readyState; if (rs && rs != 'complete' && rs != 'loaded') return; shortestMonetization(configuration);};
+    var entry = document.getElementsByTagName('script')[0];
+    entry.parentNode.insertBefore(script, entry);
+})();
+//]]></script>

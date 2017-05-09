@@ -15,3 +15,4 @@
 //= require responsiveslides.min.js
 //= require jquery.flexisel.js
 //= require social-share-button
+//= require animatedModal.min
