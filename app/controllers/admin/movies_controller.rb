@@ -8,7 +8,7 @@ class Admin::MoviesController < Admin::BaseController
   # GET /admin/movies.json
   def index
     # binding.pry
-    @movies = Movie.limit(params['draw'])
+    @movies = Movie.all#limit(params['draw'])
   end
 
   # GET /admin/movies/1

@@ -82,16 +82,16 @@
 					</div>
 					<%= render "movie_card7", movie: movie[2] if movie[2].present? %>
 					<div class="row_5">
-						<%= render "movie_card8", movie: movie[3] if movie[3].present? %>
+						<%= render "movie_card8", movie: movie[3], index: 0 if movie[3].present? %>
 					</div>
 				<% else %>
 					<%= render "movie_card12", movie: movie[0] if movie[0].present? %>
 					<div class="row_5">
-						<%= render "movie_card8", movie: movie[1] if movie[1].present? %>
+						<%= render "movie_card8", movie: movie[1], index: 1 if movie[1].present? %>
 					</div>
 					<%= render "movie_card12", movie: movie[2] if movie[2].present? %>
 					<div class="row_5">
-						<%= render "movie_card8", movie: movie[3] if movie[3].present? %>
+						<%= render "movie_card8", movie: movie[3], index: 1 if movie[3].present? %>
 					</div>
 				<% end %>
 			<% end %>
