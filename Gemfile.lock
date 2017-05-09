@@ -92,6 +92,9 @@ GEM
     filesize (0.1.1)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    googl (0.7.1)
+      httparty (~> 0.10)
+      json (>= 1.4.6)
     google-analytics-rails (1.1.0)
     http-cookie (1.0.2)
       domain_name (~> 0.5)
@@ -287,6 +290,7 @@ DEPENDENCIES
   dotenv
   faker
   filesize
+  googl
   google-analytics-rails (= 1.1.0)
   jbuilder (~> 2.5)
   jquery-rails
