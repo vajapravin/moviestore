@@ -136,20 +136,28 @@
         </div> -->
       </div>
       <div class="clearfix"> </div>
+      <br>
+      <p class="movie_option more_characters">
+        <strong>Synopsis: </strong>
+        <%= @movie.synopsis %>
+      </p>
+      
+      <div class="clearfix"> </div>
+
       <table id="now" class="table table-bordered" style="font-size: 20px; margin-top: 10px;">
       <thead>
-        <tr>
-          <th></th>
-          <th><center>Size</center></th>
-          <th><center>Seeds</center></th>
-          <th><center>Peer</center></th>
-          <th></th>
+        <tr align="center">
+          <td></td>
+          <td>Size</td>
+          <td>Seeds</td>
+          <td>Peer</td>
+          <td></td>
         </tr>
       </thead>
       <tbody align="center">
         <% @torrents.each do |t| %>
         <tr>
-          <td><%=t[:quality]%></td>
+          <td><b><%=t[:quality]%></b></td>
           <td><%=t[:size]%></td>
           <td><%=t[:seeds]%></td>
           <td><%=t[:peers]%></td>
@@ -159,6 +167,7 @@
       </tbody>
       </table>
       <div class="clearfix"> </div>
+
       <br>
     </div>
     <%= render "relate_movies" %>
