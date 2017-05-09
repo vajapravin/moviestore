@@ -126,25 +126,40 @@
           <a class="btn1 btn-blue" href="#"><i class="mdi mdi-movie mdi-18px"></i> Download Movie</a>
         </div> -->
         <div class="down_btn">
-          <a class="btn1 btn-cyan" href="<%=@movie.facebook_commenter_url%>/watch/online#WatchMovie"><i class="mdi mdi-video mdi-18px"></i> Watch Movie</a>
+          <a class="btn1 btn-cyan" href="#WatchMovie"><i class="mdi mdi-video mdi-18px"></i> Watch Movie</a>
+        </div>
+        <div class="down_btn">
+          <a class="btn1 btn-orange" href="<%=@movie.facebook_commenter_url%>/free/download#now"><i class="mdi mdi-magnet mdi-18px"></i> Download Movie</a>
         </div>
         <!-- <div class="down_btn">
           <a class="btn1 btn-orange" href="#"><i class="mdi mdi-magnet mdi-18px"></i> Magnet Download</a>
         </div> -->
       </div>
       <div class="clearfix"> </div>
-
+      <table id="now" class="table table-bordered" style="font-size: 20px; margin-top: 10px;">
+      <thead>
+        <tr>
+          <th></th>
+          <th><center>Size</center></th>
+          <th><center>Seeds</center></th>
+          <th><center>Peer</center></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody align="center">
+        <% @torrents.each do |t| %>
+        <tr>
+          <td><%=t[:quality]%></td>
+          <td><%=t[:size]%></td>
+          <td><%=t[:seeds]%></td>
+          <td><%=t[:peers]%></td>
+          <td><a class="btn1 btn-sm btn-red" href="<%=t[:url]%>" target="_blank">Download</a></td>
+        </tr>
+        <% end %>
+      </tbody>
+      </table>
+      <div class="clearfix"> </div>
       <br>
-
-      <% unless @movie.youtube.blank? %>
-        <iframe width="783" height="440" src="<%= @movie.youtube %>" frameborder="0"></iframe>
-      <% end %>
-
-      <%= social_share_button_tag(@movie.name, :image => "http://www.watchmoviesfree.info#{@movie.cover_photo}", desc: @movie.plot_summary) %>
-
-      <iframe src="<%=@movie.watch_movie%>" scrolling="no" frameborder="0" id="WatchMovie" width="783" height="440" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true"></iframe>
-
-      <div class="fb-comments" data-href="http://www.watchmoviesfree.info<%=@movie.facebook_commenter_url%>" data-width="783" data-numposts="5"></div>
     </div>
     <%= render "relate_movies" %>
   </div>

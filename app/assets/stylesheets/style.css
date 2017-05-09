@@ -997,6 +997,7 @@ text-transform: uppercase;
 display: block;
 width: 250px;
 text-align: center;
+cursor: pointer;
 }
 .btn1 span {
 width: 20px;

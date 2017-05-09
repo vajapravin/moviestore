@@ -4,7 +4,10 @@ class MiscController < ApplicationController
 		
 	def movie_detail; end
 	def movie_watch; end
-	def movie_download; end
+	def movie_download
+		yts = YTS::Movie.list('json', {query_term: "tt#{@movie.imdbid}"})
+		@torrents = yts['data']['movies'][0]['torrents'].map {|t| { quality: t['quality'], size: t['size'], seeds: t['seeds'], peers: t['peers'], url: t['url'] } }
+	end
 
 	def upcoming
 	end
