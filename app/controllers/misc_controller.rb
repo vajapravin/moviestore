@@ -27,6 +27,6 @@ class MiscController < ApplicationController
 	private
 	def set_movie
 		@movie = Movie.find_by(imdbid: params[:imdbid])
-		@relate_movies = @movie.find_related_tags.with_poster.where.not(id: @movie.id).limit(5)
+		@relate_movies = @movie.find_related_tags.with_large_cover.where.not(id: @movie.id).limit(5)
 	end
 end
