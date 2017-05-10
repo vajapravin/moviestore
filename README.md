@@ -22,3 +22,5 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+http://trac.opensubtitles.org/projects/opensubtitles/wiki/DevReadFirst

@@ -148,10 +148,10 @@
   <div class="form__action">
     <%# ['HDTV', '1080p', 'x264'].each do |tag| %>
       <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect tagCheckboxes" for="<%#=tag%>">
-        <%# if @movie.tag_list.include?(tag) %>
-          <input type="checkbox" id="<%#=tag%>" class="mdl-checkbox__input" name='movie[tag_list][]' value="<%#=tag%>" checked/>
+        <%# if @movie.genres.include?(tag) %>
+          <input type="checkbox" id="<%#=tag%>" class="mdl-checkbox__input" name='movie[genres][]' value="<%#=tag%>" checked/>
         <%# else %>
-          <input type="checkbox" id="<%#=tag%>" class="mdl-checkbox__input" name='movie[tag_list][]' value="<%#=tag%>"/>
+          <input type="checkbox" id="<%#=tag%>" class="mdl-checkbox__input" name='movie[genres][]' value="<%#=tag%>"/>
         <%# end %>
         <span class="mdl-checkbox__label"> <%#= tag %></span>
       </label>
