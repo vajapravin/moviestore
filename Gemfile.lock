@@ -57,6 +57,7 @@ GEM
       activerecord (>= 3.1)
     builder (3.2.2)
     byebug (9.0.5)
+    charlock_holmes (0.7.3)
     chronic (0.10.2)
     climate_control (0.0.3)
       activesupport (>= 3.0)
@@ -70,6 +71,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.10.0)
+    colorize (0.8.1)
     concurrent-ruby (1.0.2)
     connection_pool (2.2.1)
     debug_inspector (0.0.2)
@@ -240,6 +242,10 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    subtitle_it (2.2.0)
+      charlock_holmes
+      colorize
+      nokogiri
     therubyracer (0.12.2)
       libv8 (~> 3.16.14.0)
       ref
@@ -271,6 +277,7 @@ GEM
     websocket-extensions (0.1.2)
     whenever (0.9.7)
       chronic (>= 0.6.3)
+    xmlrpc (0.3.0)
     yts-ruby (0.1.1)
 
 PLATFORMS
@@ -315,6 +322,7 @@ DEPENDENCIES
   social-share-button
   spring
   spring-watcher-listen (~> 2.0.0)
+  subtitle_it
   therubyracer
   traceroute
   turbolinks (~> 5)
@@ -323,6 +331,7 @@ DEPENDENCIES
   uuidtools
   web-console
   whenever
+  xmlrpc
   yts-ruby
 
 RUBY VERSION

@@ -69,7 +69,7 @@ class Admin::MoviesController < Admin::BaseController
       @movie.released_date = imdb_movie.release_date
       @movie.metascore = imdb_movie.metascore
       @movie.tagline = imdb_movie.tagline
-      @movie.tag_list = imdb_movie.genres
+      @movie.genres = imdb_movie.genres
       @movie.company = imdb_movie.company
       @movie.length = imdb_movie.length
       @movie.vote_count = imdb_movie.votes
