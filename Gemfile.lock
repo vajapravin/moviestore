@@ -246,6 +246,8 @@ GEM
       charlock_holmes
       colorize
       nokogiri
+    themoviedb (1.0.1)
+      httparty
     therubyracer (0.12.2)
       libv8 (~> 3.16.14.0)
       ref
@@ -323,6 +325,7 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   subtitle_it
+  themoviedb
   therubyracer
   traceroute
   turbolinks (~> 5)

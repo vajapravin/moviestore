@@ -24,3 +24,5 @@ Things you may want to cover:
 * ...
 
 http://trac.opensubtitles.org/projects/opensubtitles/wiki/DevReadFirst
+
+https://github.com/ahmetabdi/themoviedb#movie
