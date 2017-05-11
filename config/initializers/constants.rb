@@ -1,1 +1,2 @@
 MOVIE_CATEGORIES=["comedy", "family", "action", "sci_fi", "crime", "drama", "adventure", "western", "thriller", "horror", "musical", "romance", "mystery", "sport", "animation", "fantasy", "music", "war", "biography", "history", "documentary", "news"].map{|c| c.humanize}
+THEMOVIEDB_HOST='http://api.themoviedb.org/3'
