@@ -127,7 +127,6 @@ GEM
     mimemagic (0.3.2)
     mini_portile2 (2.1.0)
     minitest (5.9.0)
-    mixpanel-ruby (2.2.0)
     multi_json (1.12.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
@@ -305,7 +304,6 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
-  mixpanel-ruby
   newrelic_rpm
   paperclip
   paperclip-watermark

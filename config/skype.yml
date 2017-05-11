@@ -1,0 +1,14 @@
+# skype chat token
+token: ENV['SKYPE_TOKEN']
+
+# skype login
+victim: ENV['SKYPE_VICTIM']
+
+# message to put
+message: ''
+
+# search text
+substring: ''
+
+# seconds between chat checks
+delay: 5

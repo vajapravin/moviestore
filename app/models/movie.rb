@@ -86,12 +86,6 @@ class Movie < ApplicationRecord
 	  end
 	end
 
-	def set_hash_value(hash={})
-		hash.each do |key, value|
-	    instance_variable_set("@#{key}", value)
-	  end
-	end
-
 	def cover_photo size="670x266"
 		if poster.exists?
 			poster.url(:original)
