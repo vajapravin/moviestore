@@ -9,8 +9,6 @@ class HomeController < ApplicationController
 	end
 
 	def search
-		# Movie.__elasticsearch__.create_index! force: true
-		# Movie.__elasticsearch__.refresh_index!
 		Movie.import
 		@featured_movies_1 = Movie.search(params[:q]).records
 	end
