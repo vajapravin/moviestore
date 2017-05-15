@@ -3,7 +3,7 @@ namespace :themoviedb do
   task sync_popular: :environment do
     Tmdb::Api.key(ENV['THEMOVIEDB_KEY'])
     Tmdb::Api.language("en")
-    page = 8 #183
+    page = 0 #183
     loop do
       ap "Sync Page => #{page+1}"
       page, results, total_results, total_pages = fetch_movies("#{THEMOVIEDB_HOST}/discover/movie?sort_by=popularity.desc&api_key=#{ENV['THEMOVIEDB_KEY']}&page=#{page+1}")
