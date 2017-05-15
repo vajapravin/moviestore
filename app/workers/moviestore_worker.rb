@@ -5,8 +5,8 @@ class MovieStoreWorker
   sidekiq_options retry: 5
 
   def perform(*args)
-    `RAILS_ENV=#{Rails.env} rake dev:sync_popular`
-  	`RAILS_ENV=#{Rails.env} rake dev:sync_upcoming`
+    `RAILS_ENV=#{Rails.env} rake themoviedb:sync_popular`
+  	`RAILS_ENV=#{Rails.env} rake themoviedb:sync_upcoming`
     `RAILS_ENV=#{Rails.env} rake dev:sync_openload`
     `RAILS_ENV=#{Rails.env} rake dev:home_slider`
     `RAILS_ENV=#{Rails.env} rake dev:facebook_commenter_url`
