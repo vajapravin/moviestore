@@ -58,8 +58,14 @@
 #  large_cover_image         :string
 #  language                  :string
 #
+require 'elasticsearch/model'
 
 class Movie < ApplicationRecord
+	include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
+  
+  index_name    "articles-#{Rails.env}"
+
 	acts_as_taggable
 	acts_as_taggable_on :directors, :writers, :languages, :filming_locations, :countries, :cast_members, :genres
 	

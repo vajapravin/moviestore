@@ -52,11 +52,11 @@
 
         <p class="movie_option"><strong>Year: </strong><%= link_to @movie.released_year, "#" %></p>
         
-        <% unless @movie.genres.blank? %>
+        <% unless @movie.genre_list.blank? %>
         <p class="movie_option"><strong>Category: </strong>
-          <% @movie.genres.each_with_index do |tag, index| %>
+          <% @movie.genre_list.each_with_index do |tag, index| %>
           <a href="/movies/genre/<%=tag.downcase.split(' ').join('+')%>-movies" target='self'>
-            <%= (@movie.genres.length != 1 && index < @movie.genres.length - 1) ? "#{tag.titlecase}, " : tag.titlecase %>
+            <%= (@movie.genre_list.length != 1 && index < @movie.genre_list.length - 1) ? "#{tag.titlecase}, " : tag.titlecase %>
           </a>
         <% end %>
         </p>

@@ -159,4 +159,4 @@
     <%= render "relate_movies" %>
   </div>
 </div>
-<%= render "/shared/shortst" %>
+<%= render "/shared/shortst" unless Rails.env.development? %>

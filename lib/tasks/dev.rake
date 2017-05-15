@@ -24,6 +24,14 @@ namespace :dev do
     end
   end
 
+  desc 'youtube URL'
+  task youtube_url: :environment do
+    Movie.where.not(yt_trailer_code: nil).where("youtube = '' OR youtube IS NULL").each do |m|
+      m.update_attributes(youtube: "https://www.youtube.com/embed/#{m.yt_trailer_code}")
+      ap "https://www.youtube.com/embed/#{m.yt_trailer_code}"
+    end
+  end
+
   desc 'Home page featured movies'
   task featured: :environment do
     FeaturedMovie.destroy_all

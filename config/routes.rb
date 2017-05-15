@@ -23,4 +23,6 @@ Rails.application.routes.draw do
   get "/movie/featured" => "misc#featured"
   get "/movie/news" => "misc#news"
   get "/movie/more" => "misc#more"
+
+  get "/movie/search" => "home#search"
 end
