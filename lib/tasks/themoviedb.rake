@@ -8,7 +8,7 @@ namespace :themoviedb do
       ap "Sync Page => #{page+1}"
       page, results, total_results, total_pages = fetch_movies("#{THEMOVIEDB_HOST}/discover/movie?sort_by=popularity.desc&api_key=#{ENV['THEMOVIEDB_KEY']}&page=#{page+1}")
       sleep 5
-      break if page == 34
+      break if page == 200
     end
   end
 
@@ -21,7 +21,7 @@ namespace :themoviedb do
       ap "Sync Page => #{page+1}"
       page, results, total_results, total_pages = fetch_movies("#{THEMOVIEDB_HOST}/movie/upcoming?api_key=#{ENV['THEMOVIEDB_KEY']}&page=#{page+1}")
       sleep 5
-      break if page == 10
+      break if page == 200
     end
   end
 

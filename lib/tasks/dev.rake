@@ -1,3 +1,5 @@
+require 'moviestore_worker'
+
 namespace :dev do
   desc 'Home page slider movies'
   task home_slider: :environment do
@@ -174,5 +176,10 @@ namespace :dev do
         end
       end
     end
-  end  
+  end
+
+  desc 'Perform Worker'
+  task moviestore: :environment do
+    MovieStoreWorker.perform_async
+  end
 end
