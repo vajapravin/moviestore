@@ -15,5 +15,6 @@ module MovieStore
     # -- all .rb files in that directory are automatically loaded.
     config.enable_dependency_loading = true
     config.autoload_paths << Rails.root.join('lib')
+    config.autoload_paths << Rails.root.join('app/jobs')
   end
 end

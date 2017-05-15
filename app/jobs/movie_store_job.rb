@@ -1,8 +1,7 @@
 require 'rake'
 
-class MovieStoreWorker
-  include Sidekiq::Worker
-  sidekiq_options retry: 5
+class MovieStoreJob < ApplicationJob
+  queue_as :default
 
   def perform(*args)
     `RAILS_ENV=#{Rails.env} rake themoviedb:sync_popular`
