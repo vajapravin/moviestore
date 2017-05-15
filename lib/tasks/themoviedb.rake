@@ -7,6 +7,7 @@ namespace :themoviedb do
     loop do
       ap "Sync Page => #{page+1}"
       page, results, total_results, total_pages = fetch_movies("#{THEMOVIEDB_HOST}/discover/movie?sort_by=popularity.desc&api_key=#{ENV['THEMOVIEDB_KEY']}&page=#{page+1}")
+      sleep 1000
       break if page == 34
     end
   end
@@ -19,6 +20,7 @@ namespace :themoviedb do
     loop do
       ap "Sync Page => #{page+1}"
       page, results, total_results, total_pages = fetch_movies("#{THEMOVIEDB_HOST}/movie/upcoming?api_key=#{ENV['THEMOVIEDB_KEY']}&page=#{page+1}")
+      sleep 1000
       break if page == 10
     end
   end
@@ -39,13 +41,13 @@ namespace :themoviedb do
       results.each do |r|
         tmdb_movie = Tmdb::Movie.detail(r['id'])
         yts_movie tmdb_movie['imdb_id'].sub(/^tt/, '') if tmdb_movie['imdb_id']
-  		end
-  	end
+      end
+    end
   end
 
   # Search using YTS
   def yts_movie imdbid
-  	movie = Movie.find_by!(imdbid: imdbid) rescue Movie.new
+    movie = Movie.find_by!(imdbid: imdbid) rescue Movie.new
     ap "Movie - #{movie.imdbid}"
     if movie.new_record?
       yts = YTS::Movie.list('json', {limit: 1, query_term: "tt#{imdbid}"})
